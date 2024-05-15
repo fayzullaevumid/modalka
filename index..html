@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal-window</title>
+</head>
+<style>
+    .form{
+    width: 300px;
+    height: 240px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+    transform: translateY(-900px);
+    scale: 0;
+    text-align: center;
+    transition: 1s ease-out;
+}
+h2, p{
+    color: black;
+    text-align: center;
+}
+input{
+    width: 12rem;
+    border: 1px solid black;
+    height: 1.7rem;
+    outline: none;
+    margin: 0.5rem;
+}
+.button{
+    width: 5.2rem;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 5px;
+}
+.modal{
+    transform: translateY(70%);
+    scale: 1;
+    transition: 1s ease-out;
+}
+.open-js{
+    padding: 5px;
+    color: white;
+    border: none;
+    background-color: black;
+}
+.close-js{
+    padding: 5px;
+    color: white;
+    border: none;
+    background-color: red;
+    width: 7rem;
+}
+.modal-active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
+<body>
+    <button class="open-js" type="button" onclick="openModal()">Open modal</button>
+
+
+     <form class="form">
+        <div class="modal-active">
+            <h2>Modal Register</h2>
+        <input type="text" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <div >
+        <button class="button" type="button">Register</button>
+         <button class="close-js" onclick="closeModal()">Close modal</button>
+        </div>
+      </div>
+        </form>
+    <script>
+        function openModal() {
+     document.querySelector('.form').classList.add('modal')
+     }
+
+function closeModal() {
+    document.querySelector('.form').classList.remove('modal')
+}
+    </script>
+</body>
+</html>
